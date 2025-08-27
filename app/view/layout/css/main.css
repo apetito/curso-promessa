@@ -1,0 +1,128 @@
+/* main.css - Base CSS for entire project */
+
+/* Reset some default browser styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #222;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    margin-bottom: 0.75em;
+    color: #1a1a1a;
+}
+
+/* Links */
+a {
+    color: #0077cc;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+a:hover {
+    color: #005fa3;
+    text-decoration: underline;
+}
+
+/* Lists */
+ul, ol {
+    margin-left: 2em;
+    margin-bottom: 1em;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Buttons */
+button,
+input[type="submit"],
+input[type="button"] {
+    font: inherit;
+    padding: 0.5em 1.2em;
+    border: none;
+    border-radius: 4px;
+    background: #0077cc;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background: #005fa3;
+}
+
+/* Forms */
+input,
+textarea,
+select {
+    font: inherit;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Container utility */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+/* Responsive typography */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    .container {
+        padding: 1em;
+    }
+}
+.debugging {
+    background-color: #111 !important;
+    color: #00ff00 !important;
+    font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace !important;
+    padding: 1em !important;
+    border-radius: 6px !important;
+    font-size: 0.7rem !important;
+    overflow-x: auto !important;
+}
+
+.debugging pre {
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+}
+
+.logo_container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+.logo_container img {
+    max-width: 150px;
+    height: auto;
+    margin-right: 1em;
+}
