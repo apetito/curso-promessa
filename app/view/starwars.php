@@ -16,6 +16,33 @@
                         <p>
                             <?=$movie['opening_crawl']?>
                         </p>
+                        <p>
+                            <b>Personagens:</b>
+                        </p>
+                        <ul>
+                            <?php
+                            $allCharacters = [];
+                            foreach ($movie['characters'] as $characterUrl) {
+                                $urlData = explode('/', $characterUrl);
+                                $characterId = end($urlData);
+                                if ($characterId) {
+                                    if (!isset($allCharacters[$characterId])) {
+                                        $characterData = getPeopleDetail((int)$characterId);
+                                        if ($characterData) {
+                                            $allCharacters[$characterId] = htmlspecialchars($characterData['name']);
+                                        }
+                                        ?>
+                                        <li>
+                                            <a href="?page=starwars-people-detail&id=<?=$characterId?>">
+                                                <?=$allCharacters[$characterId] ?? "Desconhecido"?>
+                                            </a>
+                                        </li>
+                                        <?php
+                                    }
+                                }
+                            }
+                            ?>
+                        </ul>
                         <?php
                     }
                 }
