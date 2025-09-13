@@ -64,5 +64,11 @@ function getStarWarsFilms(int $page = 1)
     return $data ?? [];
 }
 
+function getPeopleDetail(int $id)
+{
+    $data = getStarWarsData("people/{$id}");
+    return $data ?? [];
+}
+
 ?>
 
