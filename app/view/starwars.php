@@ -1,4 +1,7 @@
 <div class="content_container">
+<?php
+dd(randomico(1,100));
+?>
     <h1>Star Wars</h1>
     <p>Explore o universo de Star Wars!</p>
     <div>
@@ -6,6 +9,8 @@
             <h2>Filmes</h2>
             <div>
                 <?php
+                
+                
                 $starWarsMovies = getStarWarsFilms();
                 if (null !== $starWarsMovies) {
                     foreach ($starWarsMovies as $movie) {

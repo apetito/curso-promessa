@@ -58,4 +58,34 @@ function getVerseByBookAndChapterAndVerse($bookId, $chapter, $verse): array
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function getRandomVerse($randomPriority = false): array
+{
+    $id = randomico(INITIAL_VERSE_ID, FINAL_VERSE_ID);
+    if ($randomPriority) {
+        $id = randomicoPrioridade();
+        dd($id);
+    }
+
+    $db = getDatabaseConnection();
+    $sql = "SELECT 
+                v.id,
+                b.name as book, 
+                concat(v.chapter,':',v.verse) as reference, 
+                v.version, 
+                t.name as testament, 
+                v.text
+            FROM verses v 
+                INNER JOIN books b ON b.external_id = v.book 
+                INNER JOIN testament t ON t.id = v.testament 
+            WHERE v.id = :id
+            ORDER BY v.id";
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
+}
+
+
+
 ?>
