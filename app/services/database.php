@@ -2,14 +2,23 @@
 
 function getDatabaseConnection()
 {
-
     $host = DB_HOST;
-    $db = 'biblia_nvi';
     $user = DB_USER;
     $pass = DB_PASS;
+    $port = DB_PORT;
+    $dbName = DB_NAME;
 
     try {
-        $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+
+        // build the DSN including SSL settings
+        $conn = "mysql:";
+        $conn .= "host=" . $host;
+        $conn .= ";port=" . $port;
+        $conn .= ";dbname=" . $dbName;
+        $conn .= ";sslmode=verify-ca;sslrootcert=ca.pem";
+
+        $pdo = new PDO($conn, $user, $pass);
+
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;
     } catch (PDOException $e) {
