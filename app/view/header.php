@@ -22,6 +22,8 @@
                 <a href="<?=SITE_URL?>/index.php?page=galeria">Galeria</a>
                 <a href="<?=SITE_URL?>/index.php?page=news">News</a>
                 <a href="<?=SITE_URL?>/index.php?page=starwars">Star Wars</a>
+                <a href="<?=SITE_URL?>/index.php?page=biblia-books">Biblia</a>
+                <a href="<?=SITE_URL?>/index.php?page=login">login</a>
             </nav>
         </div>
     </div>

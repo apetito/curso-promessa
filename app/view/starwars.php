@@ -1,7 +1,5 @@
 <div class="content_container">
-<?php
-dd(randomico(1,100));
-?>
+
     <h1>Star Wars</h1>
     <p>Explore o universo de Star Wars!</p>
     <div>

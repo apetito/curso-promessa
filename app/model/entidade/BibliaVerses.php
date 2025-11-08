@@ -64,7 +64,6 @@ function getRandomVerse($randomPriority = false): array
     $id = randomico(INITIAL_VERSE_ID, FINAL_VERSE_ID);
     if ($randomPriority) {
         $id = randomicoPrioridade();
-        dd($id);
     }
 
     $db = getDatabaseConnection();

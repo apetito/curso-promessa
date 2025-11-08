@@ -7,7 +7,7 @@
                 <center>
                     <i>
                         <?php
-                        $randomVerse = getRandomVerse();
+                        $randomVerse = getRandomVerse(true);
                         if (null !== $randomVerse) {
                             ?>
                             <?=$randomVerse['text']?> - <small><?=$randomVerse['book'].', '.$randomVerse['reference']?></small>

@@ -10,7 +10,7 @@ include_once ENTITY_PATH . "/News.php";
             Política
             <div>
                 <?php
-                $newsPolitica = getNoticias('politica', $news);
+                $newsPolitica = getNoticias('politica');
                 if (null !== $newsPolitica) {
                     foreach ($newsPolitica as $noticia) {
                         ?>
